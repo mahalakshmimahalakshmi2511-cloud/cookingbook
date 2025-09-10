@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cook Book: Your Virtual Kitchen Assistant</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Cook Book</h1>
+  <nav>
+    <ul>
+      <li><a href="#recipes">Recipes</a></li>
+      <li><a href="#favorites">Favorites</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+  <button class="theme-toggle">🌙</button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Your Virtual Kitchen Assistant</h2>
+    <p>Discover, save, and cook delicious recipes. Search by cuisine or ingredient.</p>
+    <input type="text" id="searchInput" placeholder="Search recipes...">
+    <label for="filterSelect" class="visually-hidden">Filter by Cuisine</label>
+    <select name="filter" id="filterSelect">
+      <option value="all">All Cuisines</option>
+      <option value="indian">Indian</option>
+      <option value="italian">Italian</option>
+      <option value="fusion">Fusion</option>
+    </select>
+    <button id="searchBtn">Search</button>
+  </div>
+  <div class="hero-image">
+    <img src="Masala Dosa.jpg" alt="Masal Dosa">
+  </div>
+</section>
+
+<section id="recipes">
+  <h3>Featured Recipes</h3>
+  <div class="grid" id="recipesGrid"></div>
+  <button id="loadMore">Load More</button>
+</section>
+
+<section id="favorites">
+  <h3>Favorites</h3>
+  <div class="grid" id="favoritesGrid">
+    <p class="muted">No favorites yet</p>
+  </div>
+</section>
+
+<section id="about">
+  <h3>About Cook Book</h3>
+  <p>Cook Book is your virtual kitchen assistant. Discover, save, and cook delicious recipes all from your browser!</p>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Cook Book <h1> (MAHALAKSHMI.M FULLSTACK FRONT-END DEVELOPER)</h1></p>
+  <div>
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+<div id="recipeModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalCuisineTime"></p>
+    <img id="modalImage" src="" alt="" />
+    <ol id="modalSteps"></ol>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

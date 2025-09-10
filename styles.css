@@ -1,0 +1,172 @@
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#fff9f3;color:#222;line-height:1.6;transition:0.3s;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+/* HEADER */
+header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:linear-gradient(90deg,#ff6b35,#ffb86b);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+header h1{font-size:1.6rem;font-weight:700;}
+nav ul{display:flex;gap:1rem;}
+nav ul li a{padding:6px 10px;border-radius:6px;transition:0.3s;}
+nav ul li a:hover{background:rgba(255,255,255,0.2);}
+.theme-toggle{cursor:pointer;font-size:1.2rem;background:transparent;border:none;color:#fff;}
+
+/* HERO */
+.hero{display:flex;justify-content:space-between;align-items:center;padding:2rem;gap:1rem;}
+.hero-text{max-width:600px;}
+.hero-text h2{font-size:2rem;margin-bottom:0.5rem;}
+.hero-text p{color:#555;margin-bottom:1rem;}
+.hero input, .hero select, .hero button{padding:0.6rem 0.8rem;border-radius:8px;border:1px solid #ddd;}
+.hero button{background:#ff6b35;color:#fff;border:none;cursor:pointer;transition:0.3s;}
+.hero button:hover{opacity:0.9;}
+.hero-image img{width:100%;max-width:400px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+
+/* SECTIONS */
+section{padding:2rem;}
+h3{margin-bottom:1rem;color:#ff6b35;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.08);transition:0.3s;}
+.card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 12px 24px rgba(0,0,0,0.12);}
+.card img{width:100%;height:150px;object-fit:cover;}
+.card-body{padding:1rem;}
+.card-body h4{margin-bottom:0.5rem;}
+.card-body p{color:#555;font-size:0.9rem;margin-bottom:0.8rem;}
+.card-actions{display:flex;gap:0.5rem;}
+.card-actions button{flex:1;padding:0.5rem;border-radius:8px;border:none;cursor:pointer;transition:0.3s;}
+.card-actions button:hover{opacity:0.9;}
+.fav-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,0.8);border:none;padding:6px 8px;border-radius:50%;cursor:pointer;transition:0.2s;}
+.fav-btn:hover{transform:scale(1.1);}
+
+/* FOOTER */
+footer{padding:1rem 2rem;background:#ff6b35;color:#fff;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+footer a{margin-left:1rem;color:#fff;}
+
+/* MEDIA QUERIES */
+@media(max-width:900px){.hero{flex-direction:column;}.hero-image img{max-width:100%;}}
+@media(max-width:600px){nav ul{flex-direction:column;gap:0.5rem;}}
+
+/* UTILITIES */
+.hidden{display:none;}
+
+/* MODAL */
+/* Modal base */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #fff; /* default light */
+  color: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode for modal */
+body[data-theme="dark"] .modal-content {
+  background: #2a2a2a;
+  color: #eee;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.modal-content ol {
+  margin-left: 1.2rem;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+#loadMore {
+    color: white;
+    background-color: #ff6b35;
+    border-radius: 6px;
+    padding: 8px;
+    border: none;
+    margin-top: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#loadMore:hover {
+    background-color: #ff844d;
+    transform: translateY(-2px);
+}
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ff6b35;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  animation: spin 1s linear infinite;
+  transition: transform 0.3s ease; /* smooth scaling */
+}
+
+#loadMore:hover .loader {
+  transform: scale(1.3); /* this will now scale along with rotation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+
+
+
+
+/* Dark Theme Toggle */
+body[data-theme="dark"] {
+  background: #1a1a1a;
+  color: #eee;
+  transition: background 0.3s, color 0.3s;
+}
+
+body[data-theme="dark"] header {
+  background: linear-gradient(90deg, #333, #555);
+}
+
+body[data-theme="dark"] .card {
+  background: #2a2a2a;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+body[data-theme="dark"] .hero input,
+body[data-theme="dark"] .hero select {
+  background: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body[data-theme="dark"] footer {
+  background: #333;
+}
+
+
